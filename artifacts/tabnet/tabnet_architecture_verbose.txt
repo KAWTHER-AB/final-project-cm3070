@@ -1,0 +1,89 @@
+TabNet Configuration
+TabNet(
+  (embedder): EmbeddingGenerator()
+  (tabnet): TabNetNoEmbeddings(
+    (initial_bn): BatchNorm1d(30, eps=1e-05, momentum=0.01, affine=True, track_running_stats=True)
+    (encoder): TabNetEncoder(
+      (initial_bn): BatchNorm1d(30, eps=1e-05, momentum=0.01, affine=True, track_running_stats=True)
+      (initial_splitter): FeatTransformer(
+        (shared): GLU_Block(
+          (shared_layers): ModuleList(
+            (0): Linear(in_features=30, out_features=128, bias=False)
+            (1): Linear(in_features=64, out_features=128, bias=False)
+          )
+          (glu_layers): ModuleList(
+            (0): GLU_Layer(
+              (fc): Linear(in_features=30, out_features=128, bias=False)
+              (bn): GBN(
+                (bn): BatchNorm1d(128, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+              )
+            )
+            (1): GLU_Layer(
+              (fc): Linear(in_features=64, out_features=128, bias=False)
+              (bn): GBN(
+                (bn): BatchNorm1d(128, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+              )
+            )
+          )
+        )
+        (specifics): GLU_Block(
+          (glu_layers): ModuleList(
+            (0-1): 2 x GLU_Layer(
+              (fc): Linear(in_features=64, out_features=128, bias=False)
+              (bn): GBN(
+                (bn): BatchNorm1d(128, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+              )
+            )
+          )
+        )
+      )
+      (feat_transformers): ModuleList(
+        (0-4): 5 x FeatTransformer(
+          (shared): GLU_Block(
+            (shared_layers): ModuleList(
+              (0): Linear(in_features=30, out_features=128, bias=False)
+              (1): Linear(in_features=64, out_features=128, bias=False)
+            )
+            (glu_layers): ModuleList(
+              (0): GLU_Layer(
+                (fc): Linear(in_features=30, out_features=128, bias=False)
+                (bn): GBN(
+                  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+                )
+              )
+              (1): GLU_Layer(
+                (fc): Linear(in_features=64, out_features=128, bias=False)
+                (bn): GBN(
+                  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+                )
+              )
+            )
+          )
+          (specifics): GLU_Block(
+            (glu_layers): ModuleList(
+              (0-1): 2 x GLU_Layer(
+                (fc): Linear(in_features=64, out_features=128, bias=False)
+                (bn): GBN(
+                  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+                )
+              )
+            )
+          )
+        )
+      )
+      (att_transformers): ModuleList(
+        (0-4): 5 x AttentiveTransformer(
+          (fc): Linear(in_features=32, out_features=30, bias=False)
+          (bn): GBN(
+            (bn): BatchNorm1d(30, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+          )
+          (selector): Entmax15()
+        )
+      )
+    )
+    (final_mapping): Linear(in_features=32, out_features=2, bias=False)
+  )
+)
+
+Best training F1-Score: 0.79104
+Early Stopping: epoch 26 of 26

@@ -1,0 +1,11 @@
+📌 TabNet Model Summary
+======================
+
+Input Dimension: 30
+Output Dimension: 2
+Decision Steps: 5
+Feature Transformer dim: 32
+Attentive Transformer dim: 32
+Gamma: 1.5
+Sparsity Loss Weight: 0.001
+Mask Type: entmax

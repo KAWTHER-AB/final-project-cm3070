@@ -1,0 +1,4 @@
+Method,Fraud Precision,Fraud Recall,F1-Score,Accuracy,Comments
+Hard Voting Ensemble,0.8448,0.6901,0.7597,0.9993,🔵 Solid overall — slightly weaker recall
+Soft Voting Ensemble,0.8525,0.7324,0.7879,0.9993,⭐ Best F1 — excellent fraud detection
+✅ Weighted Soft Voting Ensemble,0.8226,0.7183,0.7669,0.9993,✅ Balanced — strong precision and recall

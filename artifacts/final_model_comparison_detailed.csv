@@ -1,0 +1,8 @@
+Model,Genuine Precision,Genuine Recall,Genuine F1-Score,Fraud Precision,Fraud Recall,Fraud F1-Score
+Baseline MLP,0.9994,0.9998,0.9996,0.8393,0.662,0.7402
+LSTM + Attention,0.9995,0.9998,0.9997,0.85,0.7183,0.7786
+TabNet,0.9996,0.9997,0.9996,0.8154,0.7465,0.7794
+Autoencoder,0.9997,0.9513,0.9749,0.0277,0.831,0.0537
+Ensemble (Hard Voting Ensemble),0.9995,0.9998,0.9996,0.8448,0.6901,0.7597
+Ensemble (Soft Voting Ensemble),0.9996,0.9998,0.9997,0.8525,0.7324,0.7879
+Ensemble (Weighted Soft Voting),0.9995,0.9997,0.9996,0.8226,0.7183,0.7669
