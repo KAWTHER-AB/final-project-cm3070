@@ -1,0 +1,2 @@
+lstm_units,dense_units,dropout_rate,learning_rate,optimizer
+64,128,0.30000000000000004,0.001,rmsprop
